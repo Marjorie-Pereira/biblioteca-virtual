@@ -2,10 +2,10 @@
   "name": "avaliacao_as",
   "private": true,
   "version": "0.0.0",
-  "homepage":"https://marjorie-pereira.github.io/biblioteca-virtual",
+  "homepage": "https://marjorie-pereira.github.io/biblioteca-virtual",
   "type": "module",
   "scripts": {
-    "start":"node server/server.js",
+    "start": "node server/server.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
@@ -15,6 +15,7 @@
     "server": "json-server --watch db.json --port 3000"
   },
   "dependencies": {
+    "express": "^4.21.2",
     "json-server": "^1.0.0-beta.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
