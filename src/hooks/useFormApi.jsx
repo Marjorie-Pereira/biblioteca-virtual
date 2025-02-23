@@ -14,7 +14,7 @@ export default function useFormApi(method = "POST") {
             novoProduto[key] = value;
         }
         
-        fetch('http://localhost:3000/products', {
+        fetch('https://biblioteca-virtual-yj8s.onrender.com/book', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -34,8 +34,8 @@ export default function useFormApi(method = "POST") {
             novoProduto[key] = value;
         }
         
-        fetch(`http://localhost:3000/products/${id}`, {
-            method: 'PUT',
+        fetch(`https://biblioteca-virtual-yj8s.onrender.com/book/${id}`, {
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -46,7 +46,7 @@ export default function useFormApi(method = "POST") {
     function deleteProduct(id) {
         let confirmar = confirm('Tem certeza?');
         if(confirmar) {
-            fetch(`http://localhost:3000/products/${id}`, { method: 'DELETE'})
+            fetch(`https://biblioteca-virtual-yj8s.onrender.com/book/${id}`, { method: 'DELETE'})
             .then(() => { 
                 navigate('/produtos');
                 alert('Livro deletado com sucesso!');
@@ -55,7 +55,7 @@ export default function useFormApi(method = "POST") {
         
     }
 
-    if(method == "PUT") {
+    if(method == "PATCH") {
         return { putProduct };
     } else if (method == "DELETE") {
         return { deleteProduct };

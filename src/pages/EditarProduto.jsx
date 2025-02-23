@@ -7,11 +7,10 @@ export default function EditarProduto() {
     const navigate = useNavigate();
     const params = useParams();
     const [product, setProduct] = useState({});
-
-    const { putProduct } = useFormApi("PUT");
+    const { putProduct } = useFormApi("PATCH");
 
     function getProduct() {
-        fetch(`http://localhost:3000/products/${params.id}`)
+        fetch(`https://biblioteca-virtual-yj8s.onrender.com/book/${params.id}`)
         .then(response => response.json())
         .then(data => {
             setProduct(data);

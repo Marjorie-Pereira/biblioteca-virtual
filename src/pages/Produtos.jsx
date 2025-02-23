@@ -7,18 +7,21 @@ import { useNavigate } from "react-router";
 export default function Produtos() {
     const [products, setProducts] = useState([]);
     const navigate = useNavigate();
-    async function getProducts() {
-        const response = await fetch('http://localhost:3000/products');
-        const produtos = await response.json();
-        setProducts(produtos);
-    }
-
     
 
     useEffect(() => {
+        async function getProducts() {
+            const response = await fetch('https://biblioteca-virtual-yj8s.onrender.com/book/');
+            if(!response.ok) {
+                const msg = `Erro: ${response.statusText}`;
+                console.error(msg);
+                return;
+            }
+            const produtos = await response.json();
+            setProducts(produtos);
+        }
         getProducts();
     }, []);
-
 
     return (
         <div className="mx-auto">
@@ -28,7 +31,7 @@ export default function Produtos() {
             <div className="mt-4 mx-8 flex flex-wrap gap-4 justify-center">
             
                 {products.map((product) => (
-                    <Product key={product.id} id={product.id} title={product.name} author={product.author} price={product.price} photo_url={product.photo_url} />
+                    <Product key={product._id} id={product._id} title={product.name} author={product.author} price={product.price} photo_url={product.photo_url} />
                 ))}
             </div>
         </div>

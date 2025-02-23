@@ -5,8 +5,9 @@
   "homepage":"https://marjorie-pereira.github.io/biblioteca-virtual",
   "type": "module",
   "scripts": {
+    "start":"node server/server.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",

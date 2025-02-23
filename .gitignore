@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 
 figma.txt
+config.env

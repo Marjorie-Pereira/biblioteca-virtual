@@ -15,7 +15,7 @@ export default function ProdutoPage() {
 
     useEffect(() => {
         async function getProduct() {
-            const response = await fetch(`http://localhost:3000/products/${params.id}`);
+            const response = await fetch(`https://biblioteca-virtual-yj8s.onrender.com/book/${params.id}`);
             const data = await response.json();
             setProduct(data)
         }
@@ -44,7 +44,7 @@ export default function ProdutoPage() {
                         <p>{product.description}</p>
 
                         <div className="container w-64 lg:w-2/4 ">
-                            <Button text="Editar" onClick={() => navigate(`/produtos/${product.id}/editar-produto`)} />
+                            <Button text="Editar" onClick={() => navigate(`/produtos/${product._id}/editar-produto`)} />
                             <Button text="Remover" onClick={() => deleteProduct(params.id)} />
                             <Button text = "Voltar" onClick={() => navigate("/produtos")} />
                         </div>

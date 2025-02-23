@@ -14,7 +14,7 @@ function App() {
   return (
     <>
      
-      <BrowserRouter>
+      <BrowserRouter basename='/biblioteca-virtual'>
         <Routes>
           <Route path="/" element={<MainLayout />} >
             <Route index element={<Home />} />
@@ -23,13 +23,6 @@ function App() {
             <Route path="produtos/:id/editar-produto" element={<EditarProduto/>} />
             <Route path='/novo-produto' element={<NovoProduto />} />
           </Route>
-          {/* <Route path="/pessoas" element={<MainLayout />} >
-            <Route index element={<Home />} />
-            <Route path="/produtos" element={<Produtos />} />
-            <Route path='/produtos/:id/*' element={< ProdutoPage />} />
-            <Route path="produtos/:id/editar-produto" element={<EditarProduto/>} />
-            <Route path='/novo-produto' element={<NovoProduto />} />
-          </Route> */}
           <Route path='*' element={<h1>Página não encontrada</h1>} />
         </Routes>
       </BrowserRouter>
